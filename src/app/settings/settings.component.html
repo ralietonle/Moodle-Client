@@ -1,0 +1,46 @@
+<h3 class="text-uppercase m-4 text--primary text-decoration-underline">Options </h3>
+<h5 class="text-uppercase mx-5 text--primary">General informations</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-4">Name: </div>
+        <div class="col-8">{{name}} </div>
+    </div>
+    <div class="row">
+        <div class="col-4">Userame: </div>
+        <div class="col-8">@{{username}} </div>
+    </div>
+</div>
+<h5 class="text-uppercase mx-5 text--primary">Sync Options</h5>
+<form class="container" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="row">
+        <div class="col-4">Synchronisation: </div>
+        <div class="col-8 line"> 
+            <div>
+                <input type="radio" id="auto" name="sync" value="automatic" ngModel>
+                <label for="auto"> Automatic</label>
+            </div>
+            <div>
+                <input type="radio" id="manual" name="sync" value="manual" ngModel>
+                <label for="manual"> Manual</label>
+            </div>
+        </div>
+    </div>
+    <h5 class="text-uppercase mx-5 text--primary">Backend Server</h5>
+    <div class="row">
+        <div class="col-4">Listening on port: </div>
+        <div class="col-8 line"> 
+            <div>
+                <input type="number" name="port" ngModel>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row mt-5 bottom">
+        <div class="">
+            <button type="submit" 
+            class="btn btn-outline-success"
+            >Save</button>
+        </div>
+    </div>
+</form>
+

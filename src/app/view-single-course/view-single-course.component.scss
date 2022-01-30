@@ -1,0 +1,12 @@
+.nav-course{
+    display: flex;
+    justify-content: space-around;
+}
+.active-link{
+    &::after{
+        display: block;
+        content: " ";
+        border-bottom: 2px solid white !important;
+    }
+    
+}

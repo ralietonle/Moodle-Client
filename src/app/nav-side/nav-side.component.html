@@ -1,0 +1,5 @@
+
+<nav class="ml-0 nav">
+    <div class="text-white title">COURSES</div>
+    <a class="nav-link fromleft" *ngFor="let course of courses" routerLinkActive="active-link" routerLink="/course/{{course.id}}" ><i class="fa fa-fw fa-atom" ></i>{{course.name}}</a>
+</nav>

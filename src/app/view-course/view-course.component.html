@@ -1,0 +1,6 @@
+<section class="containter m-1">
+    <h2 class="text-white bg--primary p-1"> Off-Line Courses </h2>
+    <ol>
+        <li *ngFor="let course of courses"><a routerLink="/course/{{course.id}}" >{{course.name}}</a></li>
+    </ol>
+</section>

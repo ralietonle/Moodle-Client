@@ -1,0 +1,132 @@
+@import "../../styles.scss";
+
+@media screen and (max-width: 800px) {
+    .hidden-sm{
+      display: none;
+    }
+    .dropdown{
+        position: relative;
+    }
+    .nav{
+        .nav--right .dropdown-menu.menu{
+            position: relative;
+            margin-right: 5.1em;
+            a{
+                text-align: center;
+            }
+        }
+    }   
+}
+.active-link{
+    &::after{
+        display: block;
+        content: " ";
+        border-bottom: 2px solid white !important;
+    }
+    
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(244, 128, 32,.8);
+    justify-content: space-between;
+    height: 5em;
+    font-size: 1em;
+    position: relative;
+    &--right{
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: 1em;
+        .dropdown-menu.menu{
+            position: relative;
+            margin-right: 2em;
+        }
+        
+    }
+    .sync,.start{
+        font-size: 1.1em;
+    }
+      .syncing {
+        
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; 
+        /* transform: rotate(3deg); */
+         /* transform: rotate(0.3rad);/ */
+         /* transform: rotate(3grad); */ 
+         /* transform: rotate(.03turn);  */
+      }
+      
+      @keyframes spin {
+          from {
+              transform:rotate(0deg);
+          }
+          to {
+              transform:rotate(360deg);
+          }
+      }
+    a{
+        text-align: center;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        &:not(.active-link){
+            &.fromleft{
+                &::after{
+                    display: block;
+                    content: " ";
+                    
+                    border-bottom: 2px solid white;
+                    transform: scaleX(0);
+                    transition: transform  250ms ease-in-out;
+                    transform-origin: 0% 50%;
+        
+                }
+                &:hover {
+                    &::after{
+                        transform: scaleX(1);
+                        
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    
+    .nav--right .dropdown-menu {
+        background-color: $c-primary;
+        a{
+            text-align: center;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            &.fromleft{
+                &::after{
+                    display: block;
+                    content: " ";
+                    border-bottom: 2px solid white;
+                    transform: scaleX(0);
+                    transition: transform  250ms ease-in-out;
+                    transform-origin: 0% 50%;
+        
+                }
+                &:hover{
+                    background-color: $c-primary;
+                    &::after{
+                        transform: scaleX(1);
+                        
+                    }
+                }
+            }
+
+        }
+    }
+    
+  }

@@ -1,0 +1,24 @@
+<nav class="nav " >
+    <a class="navbar-brand">
+        <img src='../../../assets/images/mLogo.png' width="50" height="50" alt="Logo du site" />
+        <span class="hidden-sm">Moodle Client</span>   
+    </a>
+    
+    <div class="nav--right">
+      <span class="text-white">Logged in as: {{name}}(@{{username}})</span>
+      <button class="btn sync text-white" [title]="titleSync" [disabled]="isSyncing" [ngClass]="{'syncing':isSyncing}" (click)="onClickSync()"><i class="fa fa-fw fa-sync"></i></button>
+      <button class="btn text-white start " [title]="titleServ" (click)="onClickServ()"><i class="fa fa-fw fa-power-off" [ngClass]="{'text-success':isServOn, 'text-danger':!isServOn}"></i></button>
+      <div class="dropdown">
+        
+        <a class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><i class="fas fa-cog"></i><span class="hidden-sm">Settings</span></a>
+            <div class="dropdown-menu menu">
+              <a class="dropdown-item fromleft" routerLink="/course/options"><i class="fa fa-fw fa-bars"></i> Options </a>
+              <a class="dropdown-item fromleft" role="button" (click)="onSignOut()" href="#"><i class="fa fa-fw fa-sign-out-alt"></i>Log out</a>
+            </div>
+      </div>
+        
+     
+       
+    </div>
+    
+</nav>
