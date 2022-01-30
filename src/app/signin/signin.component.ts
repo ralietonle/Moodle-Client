@@ -28,24 +28,24 @@ export class SigninComponent implements OnInit {
     return this.signinForm.get('password');
   }
   onSubmit(): void {
-    var phone = this.signinForm.get('email')!.value;
+    var email = this.signinForm.get('email')!.value;
     var password = this.signinForm.get('password')!.value;
-    this.authService.signInUser(phone,password).then(
+    this.authService.signInUser(email,password).then(
       
       () => {
         console.log('Hello');
-        this.router.navigate(['/core']);
+        this.router.navigate(['/course']);
       },
       (error) => {
         this.signinMessage = "message d'erreur venant du backend ";
-        this.router.navigate(['/auth/signup']);
+        this.router.navigate(['/signup']);
       }
     );
     
   }
   initForm(){
     this.signinForm = this.fb.group({
-      phone: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
   }
