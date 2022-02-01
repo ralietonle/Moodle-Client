@@ -9,18 +9,17 @@ import { CourseService } from '../services/course.service';
 })
 export class ViewSingleCourseComponent implements OnInit, OnDestroy {
   id:string='';
-  name:string | undefined= "";
-  description:string = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim."
+  assignment: any = {}
   
   constructor(private route: ActivatedRoute, private courseService:CourseService) { }
 
   ngOnInit(): void {
-    console.log(this.name);
+    
     this.id = this.route.snapshot.params['id'];
-    this.courseService.getOneCourse(this.id);
+    this.assignment = this.courseService.getOneCourse(this.id);
   }
   ngOnDestroy(): void {
-    this.name = '';
-    this.id = '';
+    console.log('a')
+    this.assignment = {};
   }
 }

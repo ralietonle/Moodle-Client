@@ -1,0 +1,20 @@
+<a routerLink="/course/{{idCourse}}/assignments" class="primary">Return to the list of assignments</a>
+<hr>
+<h4 class="text--primary px-1">{{assignment.name}}</h4>
+<p>{{assignment.description}}</p>
+<h5 class="mt-5">Assignments submitted</h5>
+<div *ngIf="!isAssSubmitted">
+    You did not submit an assignment yet.
+</div>
+<div *ngIf="isAssSubmitted">
+    <ul>
+        <li *ngFor="let submitted of assignmentFile"><a routerLink="{{submitted.link}}"></a>{{submitted.name}}</li>
+    </ul>
+</div>
+<h5 class="mt-5">Add an assignment</h5>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <input type="file" name="assFile" ngModel>
+    <button type="submit" 
+            class="btn btn-outline-success"
+            >Submit</button>
+</form>

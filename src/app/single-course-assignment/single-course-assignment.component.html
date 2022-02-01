@@ -1,12 +1,9 @@
 <h4 class="text--primary px-1">Chapter One</h4>
 <ul>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
+    <li *ngFor="let ass of assignments" class="ass"><span><i class="fa fa-fw fa-atom" ></i><a routerLink="{{ass.id}}">{{ass.name}}</a></span><span>{{ass.description}}</span></li>
+    
 </ul>
 <h4 class="text--primary px-1">Chapter Two</h4>
 <ul>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
+    <li *ngFor="let ass of assignments" class="ass"><span><i class="fa fa-fw fa-atom" ></i><a routerLink="{{ass.id}}">{{ass.name}}</a></span><span>{{ass.description}}</span></li>
 </ul>

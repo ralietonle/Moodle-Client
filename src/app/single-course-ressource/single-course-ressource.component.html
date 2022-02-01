@@ -1,12 +1,6 @@
-<h4 class="text--primary px-1">Chapter One</h4>
-<ul>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-</ul>
-<h4 class="text--primary px-1">Chapter Two</h4>
-<ul>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-    <li><a routerLink="">Link 1</a></li>
-</ul>
+<div  *ngFor="let ress of ressources">
+    <h4 class="text--primary px-1">{{ress.name}}</h4>
+    <ul>
+        <li *ngFor="let section of ress.section"><a routerLink="{{section.url}}">{{section.name}}</a><span></span></li>
+    </ul>
+</div>

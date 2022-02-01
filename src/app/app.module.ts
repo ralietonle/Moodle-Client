@@ -20,6 +20,8 @@ import { ViewSingleCourseComponent } from './view-single-course/view-single-cour
 import { SingleCourseAssignmentComponent } from './single-course-assignment/single-course-assignment.component';
 import { SingleCourseRessourceComponent } from './single-course-ressource/single-course-ressource.component';
 import { SettingsComponent } from './settings/settings.component';
+import { SingleAssignmentComponent } from './single-assignment/single-assignment.component';
+import { ViewSingleCourseAssignmentComponent } from './view-single-course-assignment/view-single-course-assignment.component';
 
 
 
@@ -36,7 +38,9 @@ import { SettingsComponent } from './settings/settings.component';
     ViewSingleCourseComponent,
     SingleCourseAssignmentComponent,
     SingleCourseRessourceComponent,
-    SettingsComponent
+    SettingsComponent,
+    SingleAssignmentComponent,
+    ViewSingleCourseAssignmentComponent
   ],
   imports: [
     BrowserModule,

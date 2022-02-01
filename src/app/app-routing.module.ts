@@ -11,7 +11,8 @@ import { ViewSingleCourseComponent } from './view-single-course/view-single-cour
 import { SingleCourseAssignmentComponent } from './single-course-assignment/single-course-assignment.component';
 import { SingleCourseRessourceComponent } from './single-course-ressource/single-course-ressource.component';
 import { SettingsComponent } from './settings/settings.component';
-
+import { SingleAssignmentComponent } from './single-assignment/single-assignment.component';
+import { ViewSingleCourseAssignmentComponent } from './view-single-course-assignment/view-single-course-assignment.component';
 
 const routes: Routes = [
   { path: '' ,component:SigninComponent },
@@ -22,7 +23,10 @@ const routes: Routes = [
     {path:':id', component: ViewSingleCourseComponent,
             children:[
               {path:'ressources', component:SingleCourseRessourceComponent},
-              {path: 'assignments', component:SingleCourseAssignmentComponent}
+              {path: 'assignments', component:ViewSingleCourseAssignmentComponent, children:[
+                {path: '',component: SingleCourseAssignmentComponent},
+                {path: ':id',component:SingleAssignmentComponent }
+              ]}
             ]},
     
   ]},
